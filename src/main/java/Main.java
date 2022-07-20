@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -15,6 +16,9 @@ public class Main {
      * @return the maximum integer absolute value in the array
      */
     public static int maxAbsoluteVal(String[] numbers) {
-
+        List<String> numbersList = Arrays.asList(numbers);
+        return numbersList.stream().mapToInt(strNum -> Integer.parseInt(strNum)).map(num -> Math.abs(num)).max().getAsInt();
     }
 }
+//    Create a method called maxAbsoluteVal that takes a single parameter called numbers of type String[].
+//    It should return an int that is the max absolute value in the input array.
